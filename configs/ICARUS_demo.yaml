@@ -1,0 +1,30 @@
+motor_file: motors/Icarus.eng
+
+rocket:
+  structure_mass: 54.628        #kg (airframe, nose, fins, avionics, recovery — excludes the 30.0 kg propulsion section in the .eng)
+  Cd: 0.649
+  diameter: 0.156             #m (5.0 in outer diameter)
+
+recovery:
+  type: dual                  # options: ballistic | single | dual
+
+  ## used when type: single
+  #parachute_area: 3.60       #m^2
+  #parachute_Cd: 2.2
+
+  ## used when type: dual
+  drogue_area: 0.712          #m^2  -> 30 m/s at sea level
+  drogue_Cd: 1.5
+  main_area: 8.91             #m^2  -> 7.0 m/s at touchdown
+  main_Cd: 2.2
+  main_deploy_altitude: 305   # meters AGL — 1000 ft, higher than the E-class case because descent is faster
+
+launch_conditions:
+  angle_deg: 2                  #deg (degrees from vertical)
+  launch_azimuth_from_east: 45  #launch azimuth angle from eastward direction (degrees)
+  wind_speed: 3.0               #m/s (Horizontal wind speed)
+  wind_gust_speed: 6.0          #m/s (Peak gust speed of the wind)
+  wind_azimuth_from_east: 270   #degrees from east(+x) where the wind is pointing
+
+simulation:
+  dt: 0.01                     #s (Euler integration step in time)

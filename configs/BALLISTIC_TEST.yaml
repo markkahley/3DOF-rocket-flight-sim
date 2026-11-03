@@ -1,0 +1,30 @@
+motor_file: motors/estes_c6.eng       #RASP .eng thrust curve file #DATA GENERATED TO TEST THE DUAL DEPLOYMENT SYSTEM
+
+rocket:
+  structure_mass: 0.05         #kg (Mass excluding motor mass)
+  Cd: 0.60
+  diameter: 0.03              #m (outer diameter of body tube)
+
+recovery:
+  type: ballistic                  # options: ballistic | single | dual
+
+  ## used when type: single
+  #parachute_area: 0.0116        #m^2
+  #parachute_Cd: 0.8
+
+  ## used when type: dual
+  #drogue_area: <?>             #m^2
+  #drogue_Cd: <?>
+  #main_area: 0.0116            #m^2
+  #main_Cd: 0.8
+  #main_deploy_altitude: <?>    # meters AGL — main chute deploys once descending below this
+
+launch_conditions:
+  angle_deg: 3                  #deg (degrees from vertical)
+  launch_azimuth_from_east: 30  #launch azimuth angle from eastward direction (degrees)
+  wind_speed: 1.0               #m/s (Horizontal wind speed)
+  wind_gust_speed: 2.0          #m/s (Peak gust speed of the wind)
+  wind_azimuth_from_east: 245   #degrees from east(+x) where the wind is pointing
+
+simulation:
+  dt: 0.01                      #s (Euler integration step in time)
